@@ -1,5 +1,9 @@
+'use client';
+
+
+
 import Image from "next/image";
-import { Alert, Navbar } from "flowbite-react";
+import { Alert, Navbar, Dropdown, Avatar   } from "flowbite-react";
 
 export default function Home() {
   return (
