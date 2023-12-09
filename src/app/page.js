@@ -3,22 +3,18 @@
 import Image from "next/image";
 import { Alert, Navbar, Dropdown, Avatar } from "flowbite-react";
 import NavbarNow from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import About from "@/components/About";
 import FooterNow from "@/components/Footer";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-<<<<<<< HEAD
-=======
 import Slider from "@/components/Slider";
->>>>>>> 6f3b592b0a5653b8dfd8bc541c26602cb4c2efca
 export default function Home() {
   return (<div>
     <ConnectButton />
     <div className="w-full h-[900px] bg-gradient-to-br from-gray-800 to-black">
       <NavbarNow />
       <div className="flex flex-row">
-        <div className="w-[50%] flex flex-col justify-center items-center h-[500px]">
-          <div className="w-[400px] space-y-16">
+        <div className="w-[50%] flex flex-col justify-center items-center h-[500px] sm:justify-center sm:items-center">
+          <div className="w-[400px] space-y-16 ">
             <div className="text-[60px] text-white font-bold tracking-widest">
               <p className="drop-shadow-lg">KIXX</p>
               <p className="drop-shadow-lg ">Marketplace</p>
@@ -35,7 +31,7 @@ export default function Home() {
             src={"/sneaker.png"}
             width={700}
             height={700}
-            className="w-auto h-[45vh] lg:h-[48vh] md:h-[31vh] sm:h-[21vh] xsm:h-[19vh] transitions-theme -rotate-[25deg] hover:rotate-0 cursor-pointer object-fill"
+            className="hidden w-auto h-[45vh] lg:h-[48vh] md:h-[31vh] transitions-theme -rotate-[25deg] hover:rotate-0 cursor-pointer object-fill lg:block md:block"
           />
         </div>
       </div>
