@@ -20,7 +20,7 @@ export default function Launch() {
                         action="https://formbold.com/s/FORM_ID"
                         method="POST"
                     >
-                        <div class="mb-5">
+                        <div className="mb-5">
                             <label
                                 for="name"
                                 className="mb-3 block text-base font-medium text-[#07074D]"

@@ -1,3 +1,4 @@
+"use client";
 import ProjectCard from "../../../components/Card";
 import NavbarNow from "@/components/Navbar";
 import FooterNow from "@/components/Footer";
@@ -63,24 +64,34 @@ const shoes = [
         price:420
       }
   ];
-const getData = async()=>{
-    const res = await fetch('/api/dummy')
-    if(!res.ok){
-        throw new Error("failed to fetch data")
+
+
+  import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
+
+  import { gql } from "@apollo/client";
+  
+  const query = gql`
+  query {
+    purchasedFromCollections(first: 5) {
+      id
+      _buyer
+      blockNumber
+      blockTimestamp
     }
-    return res.json
-}
+  }
+  `;
 
-export default async function resell(){
+export default function resell(){
     const projects = shoes
-
+    const {data} = useSuspenseQuery(query)
+    console.log(data.purchasedFromCollections)
     return (
         <div className=" bg-white">
             <NavbarNow/>
             <h1 className=" text-gray-800 text-5xl flex justify-center m-8">BUY PREOWNED KIXX HERE</h1>
         <div className='mt-20 flex flex-wrap gap-7 justify-center m-24'>
-        {projects.map((project) => (
-          <ProjectCard props={project} />
+        {projects.map((project,index) => (
+          <ProjectCard props={project} key={index} />
         ))}
       </div>
       <FooterNow/>

@@ -14,7 +14,7 @@ const Brand = () => {
     <div>
         <NavbarNow/>
         <div className='mt-20 flex flex-wrap gap-7 justify-center m-24'>
-            {brands.map((brand) =>(
+            {brands.map((brand,index) =>(
                 <BrandCard props={brand}/>
             ))}
         </div>
