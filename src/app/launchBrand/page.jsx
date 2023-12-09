@@ -3,7 +3,7 @@ import React from 'react';
 import NavbarNow from '@/components/Navbar';
 import FooterNow from '@/components/Footer';
 import { useState } from 'react';
-import { StoreMetadata } from '@/components/StoreMetadata';
+import { StoreNewBrand } from '@/components/StoreNewBrand';
 export default function Launch() {
     // Replace these values with actual data
     const [name, setName] = useState();
@@ -29,7 +29,7 @@ export default function Launch() {
     return (
         <div className='bg-gradient-to-br from-gray-800 to-black'>
             <NavbarNow />
-            <div className="flex items-center justify-center p-12">
+            <div className="flex items-center justify-center p-12 h-screen" >
 
                 <div className="mx-auto w-full max-w-[550px] bg-white rounded-lg shadow-lg shadow-gray-100">
                     <form

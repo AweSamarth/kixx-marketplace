@@ -1,7 +1,7 @@
 import { NFTStorage } from "nft.storage";
 
 /// used NFT.storage to prepare the metadata for the NFT
-export const StoreNewbranch = async (Name, image) => {
+export const StoreNewBrand = async (Name, image) => {
   // In case you are using env then uncomment this 
   const NFT_STORAGE_API_KEY ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweEUxZDQ5RWQyNzg3ODhlZjg2NTgyZEZmMmY0OTNDNmU1NTNFMTYyYzYiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTcwMjE0MDEzNTE3NiwibmFtZSI6ImtpeHgifQ.KeCn7d77cV1e769wPpJW8TQLNJ5YkpGt0PEt3Yg0qkE";
 
