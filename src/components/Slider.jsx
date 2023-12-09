@@ -24,10 +24,10 @@ export default function Slider() {
     ];
 
     return (
-        <div className='p-24'>
+        <div className='w-full lg:p-24'>
             <motion.div variants={textVariant()}>
                 <p className="font-black md:text-[40px] sm:text-[50px] xs:text-[40px] text-[20px]">Our BestSellers ...</p>
-                
+
             </motion.div>
             <Swiper modules={[Virtual, Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={50}
@@ -41,7 +41,7 @@ export default function Slider() {
                 {dummyData.map((data, index) => (
                     <SwiperSlide key={index} virtualIndex={index}>
                         <div className='pl-16 mt-8'>
-                            <img src={data.image} alt={data.productName} className='transitions-theme rotate-0 hover:rotate-[25deg]'/>
+                            <img src={data.image} alt={data.productName} className='transitions-theme rotate-0 hover:rotate-[25deg]' />
                             <p>{data.productName}</p>
                         </div>
                     </SwiperSlide>

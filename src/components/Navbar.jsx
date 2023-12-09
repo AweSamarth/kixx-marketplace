@@ -33,14 +33,12 @@ export default function NavbarNow() {
           About
         </Navbar.Link>
         <Navbar.Link href="#" style={{ color: 'white' }}>
-          Services
+          Brands
         </Navbar.Link>
         <Navbar.Link href="#" style={{ color: 'white' }}>
-          Pricing
+          Resellers
         </Navbar.Link>
-        <Navbar.Link href="#" style={{ color: 'white' }}>
-          Contact
-        </Navbar.Link>
+        
       </Navbar.Collapse>
     </Navbar>
   );

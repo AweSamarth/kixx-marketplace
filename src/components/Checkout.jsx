@@ -51,7 +51,7 @@ export default function Checkout() {
                     <p class="text-xl font-medium">Order Summary</p>
                     <p class="text-gray-400">Check your items. And select a suitable shipping method.</p>
                     <div class="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
-                        
+
                         <div class="flex flex-col rounded-lg bg-white sm:flex-row">
                             <img class="m-2 h-24 w-28 rounded-md border object-cover object-center" src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
                             <div class="flex w-full flex-col px-4 py-4">
