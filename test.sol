@@ -26,11 +26,14 @@ contract SneakerMarketplace{
         uint timestamp;
 
     }
-    
+
     mapping  (address=>Brand) private addressToBrand;
 
     mapping (address=>address) closetToOwner;
+    mapping (uint =>Sneaker) idToSneaker;
 
+        
+    
 
 
 
@@ -42,6 +45,8 @@ contract SneakerMarketplace{
 
 
 }
+
+
 
 
 
