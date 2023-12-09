@@ -14,14 +14,54 @@ const app_id ="609246576999142755181287323616835836365844250624"
 
 export default function Testing(){
     const { data: walletClient, isError, isLoading } = useWalletClient()
-    // console.log(walletClient)
+    console.log(walletClient)
 
     async function checker(){
-    const userRandom = await PushAPI.initialize(walletClient, {env:CONSTANTS.ENV.STAGING})
-    // console.log(userRandom)
+      console.log("yep")
+
+    const response = await fetch("/testing/api", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify( "ddf" ),
+    });
+
+console.log(response)
+    }
+
+    async function anotherChecker(){
+      const userAlice = await PushAPI.initialize(walletClient, { env: CONSTANTS.ENV.STAGING });
+
+      const aliceSubscriptions = await userAlice.notification.subscriptions();
+
+      console.log(aliceSubscriptions)
+
+
 
 
     }
+
+    async function yetAnotherChecker(){
+      const userAlice = await PushAPI.initialize(walletClient, { env: CONSTANTS.ENV.STAGING });
+
+      // const response = await userAlice.notification.subscribe(
+      //   `eip155:1442:0xCDF770392F1E5E61725Cc9522c80070134D50eC7`,
+      // );
+
+      // console.log(response)
+
+      const inboxNotifications = await userAlice.notification.list("INBOX");
+
+      console.log(inboxNotifications)
+
+
+    }
+
+    
+
+    
 
     const [anonAadhaar] = useAnonAadhaar();
 
@@ -44,6 +84,9 @@ return (
         <LogInWithAnonAadhaar />
         <p>{anonAadhaar?.status}</p>
         <button className="bg-blue-500 px-4 py-2" onClick={checker} >hello</button>
+        <button className="bg-blue-500 px-4 py-2" onClick={anotherChecker} >abe kya challa</button>
+        <button className="bg-blue-500 px-4 py-2" onClick={yetAnotherChecker} >subscribe</button>
+
         <div >
       {/* Render the proof if generated and valid */}
       {anonAadhaar?.status === "logged-in" && (
