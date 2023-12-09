@@ -5,7 +5,7 @@ const nextConfig = {
       config.externals.push('pino-pretty', 'lokijs', 'encoding');
       return config;
     },
-    images:{domains:["w0.peakpx.com"]}
+    images:{domains:["w0.peakpx.com","static.nike.com"]}
   };
   
   module.exports = nextConfig;

@@ -1,10 +1,13 @@
 "use client"
-import { Alert, Navbar, Dropdown, Avatar   } from "flowbite-react";
-
+import { Alert, Navbar, Dropdown, Avatar } from "flowbite-react";
+import Link from "next/link";
+import { MdDashboard } from "react-icons/md";
+import { IoIosNotifications } from "react-icons/io";
+import { FaSignOutAlt } from "react-icons/fa";
 export default function NavbarNow() {
   return (
     <Navbar fluid rounded style={{ backgroundColor: 'transparent' }}>
-      <Navbar.Brand href="https://flowbite-react.com">
+      <Navbar.Brand href="/">
         <img src="/favicon.ico" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">KIXX</span>
       </Navbar.Brand>
@@ -18,11 +21,25 @@ export default function NavbarNow() {
         >
           <Dropdown.Header>
           </Dropdown.Header>
-          <Dropdown.Item>Dashboard</Dropdown.Item>
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Earnings</Dropdown.Item>
+          <Link href="#"><Dropdown.Item>
+            <div className="flex items-center gap-x-3">
+              <MdDashboard className="text-xl" />
+              <p className="text-md">Dashboard</p>
+            </div>
+          </Dropdown.Item></Link>
+          <Link href="#"><Dropdown.Item>
+            <div className="flex items-center gap-x-3">
+              <IoIosNotifications className="text-xl" />
+              <p className="text-md">Notifications</p>
+            </div>
+          </Dropdown.Item></Link>
           <Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>
+          <Dropdown.Item>
+            <div className="flex items-center gap-x-3">
+              <FaSignOutAlt className="text-xl" />
+              <p className="text-md">Sign out</p>
+            </div>
+          </Dropdown.Item>
         </Dropdown>
         <Navbar.Toggle />
       </div>
@@ -33,13 +50,13 @@ export default function NavbarNow() {
         <Navbar.Link href="#" style={{ color: 'white' }}>
           About
         </Navbar.Link>
-        <Navbar.Link href="#" style={{ color: 'white' }}>
+        <Navbar.Link href="/brands" style={{ color: 'white' }}>
           Brands
         </Navbar.Link>
-        <Navbar.Link href="#" style={{ color: 'white' }}>
+        <Navbar.Link href="/resell" style={{ color: 'white' }}>
           Resellers
         </Navbar.Link>
-        
+
       </Navbar.Collapse>
     </Navbar>
   );
