@@ -27,6 +27,9 @@ const services = [
 const About = () => {
   return (
     <>
+      <motion.div variants={textVariant()}>
+        <p className="font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">Introduction</p>
+      </motion.div>
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-[70 rem] leading-[30px]"
