@@ -4,8 +4,10 @@ import Image from "next/image";
 import { Alert, Navbar, Dropdown, Avatar } from "flowbite-react";
 import NavbarNow from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import About from "@/components/About";
 import FooterNow from "@/components/Footer";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import Slider from "@/components/Slider";
 export default function Home() {
   return (<div>
     <ConnectButton />
@@ -33,10 +35,10 @@ export default function Home() {
             className="w-auto h-[45vh] lg:h-[48vh] md:h-[31vh] sm:h-[21vh] xsm:h-[19vh] transitions-theme -rotate-[25deg] hover:rotate-0 cursor-pointer object-fill"
           />
         </div>
-
-
       </div>
     </div>
+    <About/>
+    <Slider/>
     <FooterNow />
   </div>
   );
