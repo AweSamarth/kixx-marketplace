@@ -8,9 +8,9 @@ contract SneakerMarketplace{
 
     event CollectionLaunched(string indexed _collectionName, uint _totalSupplyOfCollection, string _imageUrl, uint _priceInEth);
     event PurchasedFromCollection(address _buyer, string indexed _id);
-
     event ResaleListingCreated(address _reseller, string indexed _id, uint priceInEth );
     event PurchasedFromReseller (string indexed _id, address _newOwner, address _prevOwner);
+    event BrandCreated (string indexed _brandNAme, address _theAddress, string _logoUrl);
 
 
     struct Brand{
@@ -104,11 +104,12 @@ contract SneakerMarketplace{
     }
 
     function purchaseFromReseller(string memory _uniqueId) payable external {
-        require (msg.value>idToSneaker[_uniqueId].resellingPriceInEth, "no money lmao");
+        require (msg.value>idToSneaker[_uniqueId].resellingPriceInEth && idToSneaker[_uniqueId].resellingPriceInEth!=0, "no money lmao");
         address prevOwner = idToSneaker[_uniqueId].currentOwner;
         emit PurchasedFromReseller(_uniqueId, msg.sender, prevOwner ); 
         idToSneaker[_uniqueId].prevOwners.push(prevOwner);
         idToSneaker[_uniqueId].currentOwner = msg.sender;
+        idToSneaker[_uniqueId].resellingPriceInEth = 0;
 
 
     }

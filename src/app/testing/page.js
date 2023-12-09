@@ -9,10 +9,24 @@ import {
   AnonAadhaarProvider,
 } from "anon-aadhaar-react";
 import { useEffect } from "react";
+import { useContractRead } from 'wagmi'
+import { ABI, ADDRESS } from "@/constants/both";
+
 
 const app_id = "609246576999142755181287323616835836365844250624";
 
 export default function Testing() {
+
+
+  const contractRead = useContractRead({
+    address: ADDRESS,
+    abi: ABI,
+    functionName: 'addressToBrand',
+    args:['0xCDF770392F1E5E61725Cc9522c80070134D50eC7']
+  })
+
+  console.log(contractRead)
+
   const { data: walletClient, isError, isLoading } = useWalletClient();
   console.log(walletClient);
 
