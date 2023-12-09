@@ -45,7 +45,7 @@ export default function Slider() {
         <div className='w-full p-8 lg:p-24'>
             <motion.div variants={textVariant()}>
                 <p className='font-black md:text-[40px] sm:text-[50px] xs:text-[40px] text-[30px]'>
-                    Our BestSellers ...
+                    Our Bestsellers
                 </p>
             </motion.div>
             <Swiper
