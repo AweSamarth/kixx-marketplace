@@ -22,7 +22,6 @@ export default function FooterNow() {
               <Footer.Title title="about" />
               <Footer.LinkGroup col>
                 <Footer.Link href="#">KIXX</Footer.Link>
-                <Footer.Link href="#">Tailwind CSS</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
