@@ -29,9 +29,9 @@ const kickId = () => {
     };
 
     return (
-      <div>
+      <div className="bg-gradient-to-br from-gray-800 to-black dark:bg-gray-800">
         <NavbarNow/>
-      <div class="bg-gray-100 dark:bg-gray-800 py-8">
+      <div class="bg-gradient-to-br from-gray-800 to-black dark:bg-gray-800 py-8">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex flex-col md:flex-row -mx-4 justify-center it">
               <div class="md:flex-1 px-4">
@@ -51,24 +51,24 @@ const kickId = () => {
                   </div>
               </div>
               <div class="md:flex-1 px-4">
-                  <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Product Name</h2>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                  <h2 class="text-2xl font-bold text-gray-300 dark:text-white mb-2">Product Name</h2>
+                  <p class="text-gray-400 dark:text-gray-300 text-sm mb-4">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
                       ante justo. Integer euismod libero id mauris malesuada tincidunt.
                   </p>
                   <div class="flex mb-4">
                       <div class="mr-4">
-                          <span class="font-bold text-gray-700 dark:text-gray-300">Price:</span>
-                          <span class="text-gray-600 dark:text-gray-300">$29.99</span>
+                          <span class="font-bold text-gray-300 dark:text-gray-300">Price:</span>
+                          <span class="text-gray-400 dark:text-gray-300 ml-1">$29.99</span>
                       </div>
                       <div>
-                          <span class="font-bold text-gray-700 dark:text-gray-300">Availability:</span>
-                          <span class="text-gray-600 dark:text-gray-300">In Stock</span>
+                          <span class="font-bold text-gray-300 dark:text-gray-300">Availability:</span>
+                          <span class="text-gray-400 dark:text-gray-300 ml-1">In Stock</span>
                       </div>
                   </div>
                   <div class="mb-4">
-                      <span class="font-bold text-gray-700 dark:text-gray-300">Select Size:</span>
-                      <select onChange={onOptionChangeHandler}>
+                      <span class="font-bold text-gray-300 dark:text-gray-400 mr-2">Select Size:</span>
+                      <select className=" h-9 p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onChange={onOptionChangeHandler}>
                   <option>--size--</option>
                   {options.map((option, index) => {
                       return (
@@ -80,8 +80,8 @@ const kickId = () => {
               </select>
                   </div>
                   <div>
-                      <span class="font-bold text-gray-700 dark:text-gray-300">Product Description:</span>
-                      <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">
+                      <span class="font-bold text-gray-300 dark:text-gray-300">Product Description:</span>
+                      <p class="text-gray-400 dark:text-gray-300 text-sm mt-2">
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                           sed ante justo. Integer euismod libero id mauris malesuada tincidunt. Vivamus commodo nulla ut
                           lorem rhoncus aliquet. Duis dapibus augue vel ipsum pretium, et venenatis sem blandit. Quisque
@@ -91,7 +91,7 @@ const kickId = () => {
                   </div>
                   <div class="flex -mx-2 mb-4 items-center justify-center">
                       <div class="w-1/2 px-2">
-                          <button class="w-full bg-gray-900 mt-6 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Add to Cart</button>
+                          <button class="w-full bg-slate-200 mt-6 dark:bg-gray-600 text-tertiary py-2 px-4 rounded-full font-bold hover:bg-gray-400 dark:hover:bg-gray-700">Checkout</button>
                       </div>
                   </div>
               </div>
