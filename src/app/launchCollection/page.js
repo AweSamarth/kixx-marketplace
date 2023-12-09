@@ -5,6 +5,7 @@ import FooterNow from '@/components/Footer';
 import { useState } from 'react';
 import { StoreMetadata } from '@/components/StoreMetadata';
 export default function Launch() {
+    // Launch collection
     // Replace these values with actual data
     const [name, setName] = useState();
     const [maxsupply, setMaxSupply] = useState();

@@ -5,6 +5,7 @@ import FooterNow from '@/components/Footer';
 import { useState } from 'react';
 import { StoreNewBrand } from '@/components/StoreNewBrand';
 export default function Launch() {
+    // Launch brand
     // Replace these values with actual data
     const [name, setName] = useState();
     const [image, setImage] = useState();
