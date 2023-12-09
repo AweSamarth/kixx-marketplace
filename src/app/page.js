@@ -6,7 +6,6 @@ import NavbarNow from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FooterNow from "@/components/Footer";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-
 export default function Home() {
   return (<div>
     <ConnectButton />
@@ -26,9 +25,16 @@ export default function Home() {
           </div>
         </div>
         {/* For image */}
-        <div className="w-[50%]">
-
+        <div className="w-[50%] flex flex-col justify-center items-center h-[500px] pr-28 pt-24">
+          <Image
+            src={"/sneaker.png"}
+            width={700}
+            height={700}
+            className="w-auto h-[45vh] lg:h-[48vh] md:h-[31vh] sm:h-[21vh] xsm:h-[19vh] transitions-theme -rotate-[25deg] hover:rotate-0 cursor-pointer object-fill"
+          />
         </div>
+
+
       </div>
     </div>
     <FooterNow />
