@@ -7,7 +7,6 @@ import About from "@/components/About";
 import FooterNow from "@/components/Footer";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Slider from "@/components/Slider";
-import About from "@/components/About";
 import { AnonAadhaarProvider } from "anon-aadhaar-react";
 
 
