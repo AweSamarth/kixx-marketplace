@@ -8,7 +8,7 @@ import 'swiper/css/virtual';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-
+import Link from 'next/link';
 export default function Slider() {
     const [slidesPerView, setSlidesPerView] = React.useState(3);
 
@@ -29,15 +29,15 @@ export default function Slider() {
 
     // Dummy data with image and productName fields
     const dummyData = [
-        { image: '/product1.png', productName: 'Nike' },
-        { image: '/product2.png', productName: 'Adidas' },
-        { image: '/product3.png', productName: 'Puma' },
-        { image: '/product4.png', productName: 'Nike' },
-        { image: '/product4.png', productName: 'Nike' },
-        { image: '/product5.png', productName: 'Puma' },
-        { image: '/product6.png', productName: 'Asics' },
-        { image: '/product7.png', productName: 'Reebok' },
-        { image: '/product8.png', productName: 'Nike' },
+        { image: '/product1.png', productName: 'Nike', id: 1 },
+        { image: '/product2.png', productName: 'Adidas', id: 2 },
+        { image: '/product3.png', productName: 'Puma', id: 3 },
+        { image: '/product4.png', productName: 'Nike', id: 4 },
+        { image: '/product4.png', productName: 'Nike', id: 5 },
+        { image: '/product5.png', productName: 'Puma', id: 6 },
+        { image: '/product6.png', productName: 'Asics', id: 7 },
+        { image: '/product7.png', productName: 'Reebok', id: 8 },
+        { image: '/product8.png', productName: 'Nike', id: 9 },
         // Add more data as needed
     ];
 
@@ -60,14 +60,16 @@ export default function Slider() {
             >
                 {dummyData.map((data, index) => (
                     <SwiperSlide key={index} virtualIndex={index}>
-                        <div className='lg:pl-16 lg:mt-8 mt-8 max-sm:p-14 p-10'>
-                            <img
-                                src={data.image}
-                                alt={data.productName}
-                                className='transitions-theme rotate-0 hover:rotate-[25deg]'
-                            />
-                            <p>{data.productName}</p>
-                        </div>
+                        <Link href={`/resell/${data.id}`}>
+                            <div className='lg:pl-16 lg:mt-8 mt-8 max-sm:p-14 p-10'>
+                                <img
+                                    src={data.image}
+                                    alt={data.productName}
+                                    className='transitions-theme rotate-0 hover:rotate-[25deg]'
+                                />
+                                <p>{data.productName}</p>
+                            </div>
+                        </Link>
                     </SwiperSlide>
                 ))}
             </Swiper>

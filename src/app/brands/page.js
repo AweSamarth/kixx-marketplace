@@ -5,9 +5,9 @@ import FooterNow from "@/components/Footer";
 
 import React from 'react'
 let brands = [
-    {name:'Nike',image:'/-nike-logo.png',brandId:1},
-    {name:'Adidas',image:'/-Adidas-logo.png',brandId:2},
-    {name:'Asics',image:'/asics-logo.png',brandId:3}
+  { name: 'Nike', image: '/-nike-logo.png', brandId: 1 },
+  { name: 'Adidas', image: '/-Adidas-logo.png', brandId: 2 },
+  { name: 'Asics', image: '/asics-logo.png', brandId: 3 }
 ]
 const Brand = () => {
   return (
