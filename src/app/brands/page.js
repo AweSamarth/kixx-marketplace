@@ -12,6 +12,7 @@ let brands = [
 const Brand = () => {
   return (
     <div>
+<<<<<<< HEAD
       <NavbarNow />
       <div className='mt-20 flex flex-wrap gap-7 justify-center m-24'>
         {brands.map((brand) => (
@@ -19,6 +20,17 @@ const Brand = () => {
         ))}
       </div>
       <FooterNow />
+=======
+        <div className="bg-gradient-to-br from-gray-800 to-black">
+        <NavbarNow/>
+        </div> 
+        <div className='mt-20 flex flex-wrap gap-7 justify-center m-24'>
+            {brands.map((brand,index) =>(
+                <BrandCard props={brand}/>
+            ))}
+        </div>
+        <FooterNow/>
+>>>>>>> 71dc999b2705cf3a91a488d4a86dcdb10ddf6ec1
     </div>
   )
 }

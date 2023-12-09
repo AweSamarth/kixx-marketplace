@@ -44,7 +44,7 @@ export default function Launch() {
                             upload(); // Call your upload function here
                         }}
                     >
-                        <div class="mb-5">
+                        <div className="mb-5">
                             <label
                                 htmlFor="name"
                                 className="mb-3 block text-base font-medium text-[#07074D]"
