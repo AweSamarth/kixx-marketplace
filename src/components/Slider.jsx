@@ -41,7 +41,7 @@ export default function Slider() {
                 {dummyData.map((data, index) => (
                     <SwiperSlide key={index} virtualIndex={index}>
                         <div className='pl-16 mt-8'>
-                            <img src={data.image} alt={data.productName} />
+                            <img src={data.image} alt={data.productName} className='transitions-theme rotate-0 hover:rotate-[25deg]'/>
                             <p>{data.productName}</p>
                         </div>
                     </SwiperSlide>
