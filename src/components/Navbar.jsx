@@ -1,4 +1,3 @@
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Alert, Navbar, Dropdown, Avatar   } from "flowbite-react";
 
 export default function NavbarNow(){
