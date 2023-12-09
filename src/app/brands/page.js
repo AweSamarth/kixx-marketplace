@@ -13,6 +13,7 @@ const Brand = () => {
   return (
     <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <NavbarNow />
       <div className='mt-20 flex flex-wrap gap-7 justify-center m-24'>
         {brands.map((brand) => (
@@ -21,6 +22,8 @@ const Brand = () => {
       </div>
       <FooterNow />
 =======
+=======
+>>>>>>> 119fdbc6686a17f840b9d2c51ddcb51663502591
         <div className="bg-gradient-to-br from-gray-800 to-black">
         <NavbarNow/>
         </div> 
@@ -30,7 +33,10 @@ const Brand = () => {
             ))}
         </div>
         <FooterNow/>
+<<<<<<< HEAD
 >>>>>>> 71dc999b2705cf3a91a488d4a86dcdb10ddf6ec1
+=======
+>>>>>>> 119fdbc6686a17f840b9d2c51ddcb51663502591
     </div>
   )
 }

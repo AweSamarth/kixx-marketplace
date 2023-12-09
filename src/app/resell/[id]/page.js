@@ -32,11 +32,15 @@ const kickId = () => {
       <div className="bg-gradient-to-br from-gray-800 to-black dark:bg-gray-800 ">
         <NavbarNow/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 119fdbc6686a17f840b9d2c51ddcb51663502591
       <div className="py-8 h-full lg:h-screen flex-none mt-16">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex flex-col md:flex-row -mx-4 justify-center it">
               <div class="md:flex-1 px-4">
                   <div class="h-[460px] max-w-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
+<<<<<<< HEAD
 =======
       <div className=" dark:bg-gray-800 py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,6 +48,8 @@ const kickId = () => {
               <div className="md:flex-1 px-4">
                   <div className="h-[460px] max-w-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
 >>>>>>> 71dc999b2705cf3a91a488d4a86dcdb10ddf6ec1
+=======
+>>>>>>> 119fdbc6686a17f840b9d2c51ddcb51663502591
                   <div className=" relative object-cover  h-[460px] ">
                   <Image
                   className="rounded-lg left-4"
