@@ -1,4 +1,35 @@
-export const ABI= [
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "_collectionName",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "_totalSupplyOfCollection",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "_imageUrl",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "_priceInEth",
+				"type": "uint256"
+			}
+		],
+		"name": "CollectionLaunched",
+		"type": "event"
+	},
 	{
 		"inputs": [
 			{
@@ -66,15 +97,64 @@ export const ABI= [
 						"internalType": "address",
 						"name": "theAddress",
 						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "logoUrl",
+						"type": "string"
 					}
 				],
-				"internalType": "struct KixxMarketplace.Brand",
+				"internalType": "struct SneakerMarketplace.Brand",
 				"name": "",
 				"type": "tuple"
 			}
 		],
 		"stateMutability": "nonpayable",
 		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "_buyer",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "_id",
+				"type": "string"
+			}
+		],
+		"name": "PurchasedFromCollection",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "_id",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "_newOwner",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "_prevOwner",
+				"type": "address"
+			}
+		],
+		"name": "PurchasedFromReseller",
+		"type": "event"
 	},
 	{
 		"inputs": [
@@ -103,6 +183,31 @@ export const ABI= [
 		"type": "function"
 	},
 	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "_reseller",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "_id",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "priceInEth",
+				"type": "uint256"
+			}
+		],
+		"name": "ResaleListingCreated",
+		"type": "event"
+	},
+	{
 		"stateMutability": "payable",
 		"type": "fallback"
 	},
@@ -129,6 +234,11 @@ export const ABI= [
 				"internalType": "address",
 				"name": "theAddress",
 				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "logoUrl",
+				"type": "string"
 			}
 		],
 		"stateMutability": "view",
@@ -145,11 +255,6 @@ export const ABI= [
 		"name": "idToSneaker",
 		"outputs": [
 			{
-				"internalType": "bool",
-				"name": "boughtOnce",
-				"type": "bool"
-			},
-			{
 				"components": [
 					{
 						"components": [
@@ -162,9 +267,14 @@ export const ABI= [
 								"internalType": "address",
 								"name": "theAddress",
 								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "logoUrl",
+								"type": "string"
 							}
 						],
-						"internalType": "struct KixxMarketplace.Brand",
+						"internalType": "struct SneakerMarketplace.Brand",
 						"name": "brand",
 						"type": "tuple"
 					},
@@ -199,7 +309,7 @@ export const ABI= [
 						"type": "uint256"
 					}
 				],
-				"internalType": "struct KixxMarketplace.SneakerCollection",
+				"internalType": "struct SneakerMarketplace.SneakerCollection",
 				"name": "collection",
 				"type": "tuple"
 			},
@@ -248,9 +358,14 @@ export const ABI= [
 						"internalType": "address",
 						"name": "theAddress",
 						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "logoUrl",
+						"type": "string"
 					}
 				],
-				"internalType": "struct KixxMarketplace.Brand",
+				"internalType": "struct SneakerMarketplace.Brand",
 				"name": "brand",
 				"type": "tuple"
 			},
