@@ -87,7 +87,9 @@ export default function resell(){
     console.log(data.purchasedFromCollections)
     return (
         <div className=" bg-white">
-            <NavbarNow/>
+            <div className="bg-gradient-to-br from-gray-800 to-black">
+        <NavbarNow/>
+        </div> 
             <h1 className=" text-gray-800 text-5xl flex justify-center m-8">BUY PREOWNED KIXX HERE</h1>
         <div className='mt-20 flex flex-wrap gap-7 justify-center m-24'>
         {projects.map((project,index) => (

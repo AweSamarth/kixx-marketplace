@@ -29,9 +29,9 @@ const kickId = () => {
     };
 
     return (
-      <div className="bg-gradient-to-br from-gray-800 to-black dark:bg-gray-800">
+      <div className="bg-gradient-to-br from-gray-800 to-black dark:bg-gray-800 ">
         <NavbarNow/>
-      <div className="bg-gradient-to-br from-gray-800 to-black dark:bg-gray-800 py-8">
+      <div className=" dark:bg-gray-800 py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row -mx-4 justify-center it">
               <div className="md:flex-1 px-4">

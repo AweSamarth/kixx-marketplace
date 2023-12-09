@@ -12,7 +12,9 @@ let brands = [
 const Brand = () => {
   return (
     <div>
+        <div className="bg-gradient-to-br from-gray-800 to-black">
         <NavbarNow/>
+        </div> 
         <div className='mt-20 flex flex-wrap gap-7 justify-center m-24'>
             {brands.map((brand,index) =>(
                 <BrandCard props={brand}/>
