@@ -1,6 +1,5 @@
-import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { Alert, Navbar, Dropdown, Avatar } from "flowbite-react";
-import { color } from "framer-motion";
+"use client"
+import { Alert, Navbar, Dropdown, Avatar   } from "flowbite-react";
 
 export default function NavbarNow() {
   return (
@@ -35,14 +34,12 @@ export default function NavbarNow() {
           About
         </Navbar.Link>
         <Navbar.Link href="#" style={{ color: 'white' }}>
-          Services
+          Brands
         </Navbar.Link>
         <Navbar.Link href="#" style={{ color: 'white' }}>
-          Pricing
+          Resellers
         </Navbar.Link>
-        <Navbar.Link href="#" style={{ color: 'white' }}>
-          Contact
-        </Navbar.Link>
+        
       </Navbar.Collapse>
     </Navbar>
   );
