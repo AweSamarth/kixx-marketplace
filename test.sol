@@ -9,6 +9,7 @@ contract SneakerMarketplace{
     struct Brand{
         string brandName;
         address theAddress;
+        string logoUrl;
     }
 
     struct SneakerCollection{
@@ -24,7 +25,6 @@ contract SneakerMarketplace{
     }
 
     struct Sneaker {
-        bool boughtOnce;
         SneakerCollection collection;
         string uniqueId;
         address currentOwner;
@@ -35,16 +35,19 @@ contract SneakerMarketplace{
 
     }
 
-    mapping  (address=>Brand) private addressToBrand;
+    mapping  (address=>Brand) public addressToBrand;
     mapping (string =>Sneaker) public idToSneaker;    
     mapping (string=>SneakerCollection) public nameToCollection;
 
     function newCollection(string memory _collectionName, uint _totalSupplyOfCollection, string memory _imageUrl, uint _priceInEth) public  returns(Brand memory){
     if (bytes(addressToBrand[msg.sender].brandName).length != 0) {
+        nameToCollection[_collectionName].brand = addressToBrand[msg.sender];
         nameToCollection[_collectionName].collectionName  = _collectionName;
         nameToCollection[_collectionName].totalSupplyOfCollection  = _totalSupplyOfCollection;
         nameToCollection[_collectionName].imageUrl  = _imageUrl;
         nameToCollection[_collectionName].priceInEth = _priceInEth;
+        nameToCollection[_collectionName].timestamp = block.timestamp;
+        
     //emit an event here?
     
     }
@@ -69,7 +72,6 @@ contract SneakerMarketplace{
             string memory anotherTemp = string.concat(nameToCollection[_collectionName].collectionName, tempString );
 
             idToSneaker[anotherTemp].collection = nameToCollection[_collectionName];
-            idToSneaker[anotherTemp].boughtOnce = true;
             idToSneaker[anotherTemp].uniqueId = anotherTemp;
             idToSneaker[anotherTemp].currentOwner = msg.sender;
             idToSneaker[anotherTemp].timestamp = block.timestamp; 
