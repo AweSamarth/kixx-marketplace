@@ -10,14 +10,12 @@ export default function RootLayout({
     children,
   }) {
     return (
-      <html lang="en">
+      <>
 
-        <body > 
         <AnonAadhaarProvider _appId={app_id} >
          <Providers>{children}</Providers>
          </AnonAadhaarProvider>         
-         </body>
-      </html>
+    </>
     )
   }
   

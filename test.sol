@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 pragma solidity ^0.8.19 ;
 contract SneakerMarketplace{
 
-    event CollectionDropped(string indexed _collectionName, uint _totalSupplyOfCollection, string _imageUrl, uint _priceInEth);
+    event CollectionLaunched(string indexed _collectionName, uint _totalSupplyOfCollection, string _imageUrl, uint _priceInEth);
     event PurchasedFromCollection(address _buyer, string indexed _id);
 
     event ResaleListingCreated(address _reseller, string indexed _id, uint priceInEth );
@@ -56,7 +56,7 @@ contract SneakerMarketplace{
         nameToCollection[_collectionName].timestamp = block.timestamp;
         
     //emit an event here?
-    emit CollectionDropped(_collectionName, _totalSupplyOfCollection, _imageUrl, _priceInEth);
+    emit CollectionLaunched(_collectionName, _totalSupplyOfCollection, _imageUrl, _priceInEth);
 
     }
 

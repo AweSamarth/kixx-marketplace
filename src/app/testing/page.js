@@ -6,7 +6,8 @@ import {
     LogInWithAnonAadhaar,
     useAnonAadhaar,
     AnonAadhaarProof,
-    AnonAadhaarProvider
+    AnonAadhaarProvider,
+    
   } from "anon-aadhaar-react";import { useEffect } from "react";
 
 const app_id ="609246576999142755181287323616835836365844250624"
@@ -27,7 +28,14 @@ export default function Testing(){
     useEffect(() => {
       console.log("Anon Aadhaar status: ", anonAadhaar.status);
     }, [anonAadhaar]);
-  
+
+    // async function verifier(){
+    // if (anonAadhaar.status === "logged-in") {
+    //     const { a, b, c, Input } = await exportCallDataGroth16FromPCD(
+    //       anonAadhaar.pcd
+    //     );
+    //   }
+    // }
 
 return (
     <AnonAadhaarProvider _appId={app_id}>
@@ -44,6 +52,8 @@ return (
           <AnonAadhaarProof code={JSON.stringify(anonAadhaar.pcd, null, 2)}/>
         </>
         )}
+
+        {/* <button onClick={verifier} > i mean ok </button> */}
     </div>
     </div>
     </AnonAadhaarProvider>
