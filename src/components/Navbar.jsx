@@ -1,3 +1,4 @@
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Alert, Navbar, Dropdown, Avatar   } from "flowbite-react";
 
 export default function NavbarNow(){
@@ -16,8 +17,6 @@ return (
         }
       >
         <Dropdown.Header>
-          <span className="block text-sm">Bonnie Green</span>
-          <span className="block truncate text-sm font-medium">name@flowbite.com</span>
         </Dropdown.Header>
         <Dropdown.Item>Dashboard</Dropdown.Item>
         <Dropdown.Item>Settings</Dropdown.Item>
@@ -32,6 +31,8 @@ return (
         Home
       </Navbar.Link>
       <Navbar.Link href="#">About</Navbar.Link>
+      
+
       <Navbar.Link href="#">Services</Navbar.Link>
       <Navbar.Link href="#">Pricing</Navbar.Link>
       <Navbar.Link href="#">Contact</Navbar.Link>
