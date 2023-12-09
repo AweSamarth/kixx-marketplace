@@ -1,4 +1,6 @@
 import ProjectCard from "../../../components/Card";
+import NavbarNow from "@/components/Navbar";
+import FooterNow from "@/components/Footer";
 const shoes = [
     {
       name: "Chicago Reds",
@@ -44,12 +46,14 @@ export default async function resell(){
 
     return (
         <div className="">
+            <NavbarNow/>
             <h1 className=" text-3xl flex justify-center m-8">SELL YOUR KIXX HERE</h1>
         <div className='mt-20 flex flex-wrap gap-7'>
         {projects.map((project) => (
           <ProjectCard props={project} />
         ))}
       </div>
+      <FooterNow/>
       </div>
     )
 }
