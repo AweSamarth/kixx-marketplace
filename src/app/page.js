@@ -39,8 +39,8 @@ export default function Home() {
         </div>
       </div>
     </div>
-    <About/>
-    <Slider/>
+    <About />
+    <Slider />
     <FooterNow />
   </div>
   );

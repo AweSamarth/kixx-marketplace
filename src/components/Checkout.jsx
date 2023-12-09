@@ -1,222 +1,149 @@
-import React from "react";
-import axios from "axios";
-import { AiFillPlusCircle } from "react-icons/ai";
-import { AiFillMinusCircle } from "react-icons/ai";
-import Head from "next/head";
-import { BsFillBagCheckFill } from "react-icons/bs";
-import Script from "next/script";
-import {router} from 'next/router'
+"use client"
 
-const shortid = require("shortid");
-export default function checkout({
-  cart,
-  subTotal,
-  removeFromCart,
-  addToCart,
-}) {
-  
-  const initiatePayment = () => {
-    let oid = Math.floor(Math.random() * Date.now());
+const countries = [
+    "India",
+    "USA",
+    "China",
+    "South Africa",
+    "Brazil",
+    "Russia",
+]
 
-    const data = { cart, subTotal, oid, email: "email" };
-    axios
-      .post(`${process.env.NEXT_PUBLIC_HOST}/api/pretransaction`, data, {
-        root: "",
-        flow: "DEFAULT",
-        amount: subTotal,
-        description: "wallet transaction",
-        orderId: oid,
-        data: {
-          orderId: oid,
-          tokenType: "TXN_TOKEN",
-          amount: subTotal ,
-        },
-      })
-      .then((res) => {
-        console.log({res})
-
-        router.push(res.data.url)
-       
-      })
-      .catch((error) => console.log(error.message));
-  };
- 
-  return (
-    <div className="container m-auto">
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"
-        />
-      </Head>
-      <Script
-        type="application/javascript"
-        src={`https://checkout.razorpay.com/v1/checkout.js`}
-        crossorigin="anonymous"
-      />
-      <h1 className="font-bold text-3xl my-8 text-center">Checkout</h1>
-      <h2 className="font-bold text-xl mx-11">1. Delivery Details</h2>
-      <div className="mx-auto flex my-4 mr-10 ml-10">
-        <div className="px-2 w-1/2">
-          <div className="mb-4">
-            <label for="name" className="leading-7 text-sm text-gray-600">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
-          </div>
-        </div>
-        <div className="px-2 w-1/2">
-          <div className="relative mb-4">
-            <label for="email" className="leading-7 text-sm text-gray-600">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
-          </div>
-        </div>
-      </div>
-      <div className="px-2 w-100 mr-10 ml-10">
-        <div className="relative mb-4">
-          <label for="Address" className="leading-7 text-sm text-gray-600">
-            Address
-          </label>
-          <textarea
-            name="Address"
-            id="address"
-            cols="30"
-            rows="2"
-            className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-          />
-        </div>
-      </div>
-      <div className="mx-auto flex my-4 mr-10 ml-10">
-        <div className="px-2 w-1/2">
-          <div className="mb-4">
-            <label for="phone" className="leading-7 text-sm text-gray-600">
-              Phone
-            </label>
-            <input
-              type="text"
-              id="phone"
-              name="phone"
-              className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
-          </div>
-        </div>
-        <div className="px-2 w-1/2">
-          <div className="mb-4">
-            <label for="city" className="leading-7 text-sm text-gray-600">
-              City
-            </label>
-            <input
-              type="text"
-              id="city"
-              name="city"
-              className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
-          </div>
-        </div>
-      </div>
-      <div className="mx-auto flex my-4 mr-10 ml-10">
-        <div className="px-2 w-1/2">
-          <div className="mb-4">
-            <label for="phone" className="leading-7 text-sm text-gray-600">
-              State
-            </label>
-            <input
-              type="text"
-              id="state"
-              name="state"
-              className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
-          </div>
-        </div>
-        <div className="px-2 w-1/2">
-          <div className="mb-4">
-            <label for="pincode" className="leading-7 text-sm text-gray-600">
-              Pincode
-            </label>
-            <input
-              type="text"
-              id="pincode"
-              name="pincode"
-              className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
-          </div>
-        </div>
-      </div>
-      <h2 className="font-bold text-xl mx-11">2. Review Cart & Pay</h2>
-      <div className="w-100 sideCart p-6 m-10 mt-3 bg-pink-200">
-        <ul className="list-decimal font-semibold">
-          {Object.keys(cart).length == 0 && (
-            <div className="mt-10">
-              No items in the cart. Please go ahead and add a few items in your
-              cart to checkout.
-            </div>
-          )}
-          {Object.keys(cart).map((k) => {
-            return (
-              <li key={k}>
-                <div className="pl-4 item flex my-5">
-                  <div className=" font-semibold">
-                    {cart[k].name}({cart[k].size}/{cart[k].variant})
-                  </div>
-                  <div className="flex font-semibold items-center justify-center w-1/3">
-                    <AiFillMinusCircle
-                      onClick={() => {
-                        removeFromCart(
-                          k,
-                          1,
-                          cart[k].price,
-                          cart[k].name,
-                          cart[k].size,
-                          cart[k].variant
-                        );
-                      }}
-                      className="cursor-pointer text-pink-500"
-                    />
-                    <span className="mx-2  text-sm">{cart[k].qty}</span>
-                    <AiFillPlusCircle
-                      onClick={() =>
-                        addToCart(
-                          k,
-                          1,
-                          cart[k].price,
-                          cart[k].name,
-                          cart[k].size,
-                          cart[k].variant
-                        )
-                      }
-                      className="cursor-pointer text-pink-500"
-                    />
-                  </div>
+const regions = [
+    "Rajasthan",
+    "Madhya Pradesh",
+    "Himachal Pradesh",
+    "Kerela",
+    "Karnataka",
+]
+export default function Checkout() {
+    return (
+        <div>
+            <div class="flex flex-col items-center border-b bg-white py-4 sm:flex-row sm:px-10 lg:px-20 xl:px-32">
+                <a href="#" class="text-2xl font-bold text-gray-800">KIXX</a>
+                <div class="mt-4 py-2 text-xs sm:mt-0 sm:ml-auto sm:text-base">
+                    <div class="relative">
+                        <ul class="relative flex w-full items-center justify-between space-x-2 sm:space-x-4">
+                            <li class="flex items-center space-x-3 text-left sm:space-x-4">
+                                <a class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-200 text-xs font-semibold text-emerald-700" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg></a>
+                                <span class="font-semibold text-gray-900">Shop</span>
+                            </li>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                            <li class="flex items-center space-x-3 text-left sm:space-x-4">
+                                <a class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-600 text-xs font-semibold text-white ring ring-gray-600 ring-offset-2" href="#">2</a>
+                                <span class="font-semibold text-gray-900">Shipping</span>
+                            </li>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                            <li class="flex items-center space-x-3 text-left sm:space-x-4">
+                                <a class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-400 text-xs font-semibold text-white" href="#">3</a>
+                                <span class="font-semibold text-gray-500">Payment</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-              </li>
-            );
-          })}
-        </ul>
-        <span className="total relative font-bold mx-4">
-          Subtotal : {subTotal}
-        </span>
-      </div>
-      <div className="mx-10">
-        <button
-          onClick={initiatePayment}
-          className="flex mt-16 text-white bg-pink-500 border-0 py-2 px-4 focus:outline-none hover:bg-pink-600 rounded text-lg"
-        >
-          <BsFillBagCheckFill className="m-1" />
-          Pay ₹{subTotal}
-        </button>
-      </div>
-    </div>
-  );
+            </div>
+            <div class="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
+                <div class="px-4 pt-8">
+                    <p class="text-xl font-medium">Order Summary</p>
+                    <p class="text-gray-400">Check your items. And select a suitable shipping method.</p>
+                    <div class="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
+
+                        <div class="flex flex-col rounded-lg bg-white sm:flex-row">
+                            <img class="m-2 h-24 w-28 rounded-md border object-cover object-center" src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+                            <div class="flex w-full flex-col px-4 py-4">
+                                <span class="font-semibold">Nike Air Max Pro 8888 - Super Light</span>
+                                <span class="float-right text-gray-400">42EU - 8.5US</span>
+                                <p class="mt-auto text-lg font-bold">$238.99</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="mt-8 text-lg font-medium">Shipping Methods</p>
+                    <form class="mt-5 grid gap-6">
+                        <div class="relative">
+                            <input class="peer hidden" id="radio_1" type="radio" name="radio" checked />
+                            <span class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
+                            <label class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4" for="radio_1">
+                                <img class="w-14 object-contain" src="/images/naorrAeygcJzX0SyNI4Y0.png" alt="" />
+                                <div class="ml-5">
+                                    <span class="mt-2 font-semibold">Fedex Delivery</span>
+                                    <p class="text-slate-500 text-sm leading-6">Delivery: 2-4 Days</p>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="relative">
+                            <input class="peer hidden" id="radio_2" type="radio" name="radio" checked />
+                            <span class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
+                            <label class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4" for="radio_2">
+                                <img class="w-14 object-contain" src="/images/oG8xsl3xsOkwkMsrLGKM4.png" alt="" />
+                                <div class="ml-5">
+                                    <span class="mt-2 font-semibold">Fedex Delivery</span>
+                                    <p class="text-slate-500 text-sm leading-6">Delivery: 2-4 Days</p>
+                                </div>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">
+                    <p class="text-xl font-medium">Payment Details</p>
+                    <p class="text-gray-400">Complete your order by providing your payment details.</p>
+                    <div class="">
+                        <label for="email" class="mt-4 mb-2 block text-sm font-medium">Email</label>
+                        <div class="relative">
+                            <input type="text" id="email" name="email" class="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500" placeholder="your.email@gmail.com" />
+                            <div class="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                                </svg>
+                            </div>
+                        </div>
+                        <label for="card-holder" class="mt-4 mb-2 block text-sm font-medium">Card Holder</label>
+                        <div class="relative">
+                            <input type="text" id="card-holder" name="card-holder" class="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm uppercase shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500" placeholder="Your full name here" />
+                            <div class="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <label for="billing-address" class="mt-4 mb-2 block text-sm font-medium">Billing Address</label>
+                        <div class="flex flex-col sm:flex-row">
+                            <div class="relative flex-shrink-0 sm:w-7/12">
+                                <input type="text" id="billing-address" name="billing-address" class="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500" placeholder="Street Address" />
+                                <div class="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
+                                    <img class="h-4 w-4 object-contain" src="https://flagpack.xyz/_nuxt/4c829b6c0131de7162790d2f897a90fd.svg" alt="" />
+                                </div>
+                            </div>
+                            <select type="text" name="billing-state" class="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                                <option value="State">State</option>
+                            </select>
+                            <input type="text" name="billing-zip" class="flex-shrink-0 rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none sm:w-1/6 focus:z-10 focus:border-blue-500 focus:ring-blue-500" placeholder="ZIP" />
+                        </div>
+
+                        <div class="mt-6 border-t border-b py-2">
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-medium text-gray-900">Subtotal</p>
+                                <p class="font-semibold text-gray-900">$399.00</p>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-medium text-gray-900">Shipping</p>
+                                <p class="font-semibold text-gray-900">$8.00</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <p class="text-sm font-medium text-gray-900">Total</p>
+                            <p class="text-2xl font-semibold text-gray-900">$408.00</p>
+                        </div>
+                    </div>
+                    <button class="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">Place Order</button>
+                </div>
+            </div>
+        </div>
+
+    )
 }
