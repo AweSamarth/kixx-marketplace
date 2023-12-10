@@ -6,11 +6,11 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 pragma solidity ^0.8.19 ;
 contract SneakerMarketplace{
 
-    event CollectionLaunched(string indexed _collectionName, uint _totalSupplyOfCollection, string _imageUrl, uint _priceInEth);
-    event PurchasedFromCollection(address _buyer, string indexed _theId);
-    event ResaleListingCreated(address _reseller, string indexed _theId, uint priceInEth );
-    event PurchasedFromReseller (string indexed _theId, address _newOwner, address _prevOwner);
-    event BrandCreated (string indexed _brandName, address _theAddress, string _logoUrl);
+    event CollectionLaunched(string  _collectionName, uint _totalSupplyOfCollection, string _imageUrl, uint _priceInEth);
+    event PurchasedFromCollection(address _buyer, string  _theId);
+    event ResaleListingCreated(address _reseller, string  _theId, uint priceInEth );
+    event PurchasedFromReseller (string  _theId, address _newOwner, address _prevOwner);
+    event BrandCreated (string  _brandName, address _theAddress, string _logoUrl);
 
 
     struct Brand{
