@@ -41,7 +41,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <About />
+      <About id='about'/>
       <Slider />
       <FooterNow />
     </div>

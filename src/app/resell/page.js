@@ -1,5 +1,5 @@
 "use client";
-import ProjectCard from "../../../components/Card";
+import Card from "@/components/Card";
 import NavbarNow from "@/components/Navbar";
 import FooterNow from "@/components/Footer";
 const shoes = [
@@ -93,7 +93,7 @@ export default function resell(){
             <h1 className=" text-gray-800 text-5xl flex justify-center m-8">BUY PREOWNED KIXX HERE</h1>
         <div className='mt-20 flex flex-wrap gap-7 justify-center m-24'>
         {projects.map((project,index) => (
-          <ProjectCard props={project} key={index} />
+          <Card props={project} key={index} />
         ))}
       </div>
       <FooterNow/>
