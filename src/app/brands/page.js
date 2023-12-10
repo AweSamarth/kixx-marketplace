@@ -35,8 +35,9 @@ const Brand = () => {
   console.log(data)
   return (
     <div>
-
+      <div className="bg-gradient-to-br from-gray-800 to-black">
       <NavbarNow />
+      </div>
       <div className='mt-20 flex flex-wrap gap-7 justify-center m-24'>
         {data.brandCreateds?.map((brand, index) => (
           <BrandCard props={brand} key={index} />
