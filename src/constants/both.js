@@ -1,6 +1,6 @@
-export const ADDRESS = "0x67106EaCAf99c93DB14921b9577098eB24369592"
+export const ADDRESS = "0xa84641aced4c404c58E8350AfD3F75bb183Bf77d"
 
-export const ABI = [
+export const ABI =[
 	{
 		"anonymous": false,
 		"inputs": [
@@ -58,6 +58,93 @@ export const ABI = [
 		"type": "event"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_uniqueId",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_listingPrice",
+				"type": "uint256"
+			}
+		],
+		"name": "createResellListing",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_brandName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_logoUrl",
+				"type": "string"
+			}
+		],
+		"name": "newBrand",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_collectionName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_totalSupplyOfCollection",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_imageUrl",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_priceInEth",
+				"type": "uint256"
+			}
+		],
+		"name": "newCollection",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "brandName",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "theAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "logoUrl",
+						"type": "string"
+					}
+				],
+				"internalType": "struct SneakerMarketplace.Brand",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -102,6 +189,32 @@ export const ABI = [
 		"type": "event"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_collectionName",
+				"type": "string"
+			}
+		],
+		"name": "purchaseFromCollection",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_uniqueId",
+				"type": "string"
+			}
+		],
+		"name": "purchaseFromReseller",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -131,6 +244,10 @@ export const ABI = [
 		"type": "fallback"
 	},
 	{
+		"stateMutability": "payable",
+		"type": "receive"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -157,24 +274,6 @@ export const ABI = [
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_uniqueId",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_listingPrice",
-				"type": "uint256"
-			}
-		],
-		"name": "createResellListing",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -335,99 +434,5 @@ export const ABI = [
 		],
 		"stateMutability": "view",
 		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_brandName",
-				"type": "string"
-			}
-		],
-		"name": "newBrand",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_collectionName",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_totalSupplyOfCollection",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_imageUrl",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_priceInEth",
-				"type": "uint256"
-			}
-		],
-		"name": "newCollection",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "string",
-						"name": "brandName",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "theAddress",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "logoUrl",
-						"type": "string"
-					}
-				],
-				"internalType": "struct SneakerMarketplace.Brand",
-				"name": "",
-				"type": "tuple"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_collectionName",
-				"type": "string"
-			}
-		],
-		"name": "purchaseFromCollection",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_uniqueId",
-				"type": "string"
-			}
-		],
-		"name": "purchaseFromReseller",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"stateMutability": "payable",
-		"type": "receive"
 	}
 ]

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { MdDashboard } from "react-icons/md";
 import { IoIosNotifications } from "react-icons/io";
 import { FaSignOutAlt } from "react-icons/fa";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 export default function NavbarNow() {
   return (
     <Navbar fluid rounded style={{ backgroundColor: 'transparent' }}>
@@ -12,35 +13,7 @@ export default function NavbarNow() {
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">KIXX</span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Dropdown
-          arrowIcon={false}
-          inline
-          label={
-            <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
-          }
-        >
-          <Dropdown.Header>
-          </Dropdown.Header>
-          <Link href="#"><Dropdown.Item>
-            <div className="flex items-center gap-x-3">
-              <MdDashboard className="text-xl" />
-              <p className="text-md">Dashboard</p>
-            </div>
-          </Dropdown.Item></Link>
-          <Link href="#"><Dropdown.Item>
-            <div className="flex items-center gap-x-3">
-              <IoIosNotifications className="text-xl" />
-              <p className="text-md">Notifications</p>
-            </div>
-          </Dropdown.Item></Link>
-          <Dropdown.Divider />
-          <Dropdown.Item>
-            <div className="flex items-center gap-x-3">
-              <FaSignOutAlt className="text-xl" />
-              <p className="text-md">Sign out</p>
-            </div>
-          </Dropdown.Item>
-        </Dropdown>
+        <ConnectButton />
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse style={{ color: 'white' }}>
