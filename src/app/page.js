@@ -14,7 +14,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div>
-      <ConnectButton />
       <div className="w-screen lg:h-[900px] h-[550px] bg-gradient-to-br from-gray-800 to-black">
         <NavbarNow />
         <div className="flex lg:flex-row flex-col">
