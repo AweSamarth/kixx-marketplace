@@ -8,7 +8,7 @@ import FooterNow from "@/components/Footer";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Slider from "@/components/Slider";
 import { AnonAadhaarProvider } from "anon-aadhaar-react";
-
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,7 +24,7 @@ export default function Home() {
                 <p className="drop-shadow-lg text-orange-300 text-[40px] font-semibold">Cop the real</p>
               </div>
               <div className="flex flex-row gap-x-16 justify-center lg:justify-start">
-                <button className="border border-white lg:p-4 sm:p-2 p-3 text-white lg:text-base text-md rounded-md">BRANDS</button>
+                <Link href="/brands"> <button className="border border-white lg:p-4 sm:p-2 p-3 text-white lg:text-base text-md rounded-md">BRANDS</button></Link>
                 <button className="lg:p-4 sm:p-2 p-3 text-white bg-[#FA662C] lg:text-base text-md rounded-md ">RESELLERS</button>
               </div>
             </div>

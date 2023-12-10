@@ -4,64 +4,64 @@ import NavbarNow from "@/components/Navbar";
 import FooterNow from "@/components/Footer";
 const shoes = [
     {
-      name: "Chicago Reds",
-      _id:1,
+      _collectionName: "Chicago Reds",
+      id:1,
       description:
         "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
       owner:'rami',
-      image: '/sneaker.png',
+      _imageUrl: '/sneaker.png',
       source_code_link: "https://github.com/",
-      price:400
+      _priceInEth:4
     },
     {
-      name: "University Blues",
-      _id:2,
+      _collectionName: "University Blues",
+      id:2,
       description:
         "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
       owner:'sam',
-      image: '/product1.png',
+      _imageUrl: '/product1.png',
       source_code_link: "https://github.com/",
-      price:450
+      _priceInEth:4
     },
     {
-      name: "air jonins",
-      _id:3,
+      _collectionName: "air jonins",
+      id:3,
       description:
         "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
       owner:'peter',
-      image: '/product2.png',
+      _imageUrl: '/product2.png',
       source_code_link: "https://github.com/",
-      price:420
+      _priceInEth:420
     },
     {
-        name: "air max",
-        _id:4,
+      _collectionName: "air max",
+        id:4,
         description:
           "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
         owner:'ramu',
-        image: '/product3.png',
+        _imageUrl: '/product3.png',
         source_code_link: "https://github.com/",
-        price:420
+        _priceInEth:5
       },
       {
-        name: "air max",
-        _id:4,
+        _collectionName: "air max",
+        id:4,
         description:
           "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
         owner:'ramu',
-        image: '/product4.png',
+        _imageUrl: '/product4.png',
         source_code_link: "https://github.com/",
-        price:420
+        _priceInEth:3
       },
       {
-        name: "air max",
+        _collectionName: "air max",
         _id:4,
         description:
           "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
         owner:'ramu',
-        image: '/product5.png',
+        _imageUrl: '/product5.png',
         source_code_link: "https://github.com/",
-        price:420
+        _priceInEth:22
       }
   ];
 
@@ -84,7 +84,7 @@ const shoes = [
 export default function resell(){
     const projects = shoes
     const {data} = useSuspenseQuery(query)
-    console.log(data.purchasedFromCollections)
+    
     return (
         <div className=" bg-white">
             <div className="bg-gradient-to-br from-gray-800 to-black">

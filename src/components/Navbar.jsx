@@ -45,7 +45,9 @@ export default function NavbarNow() {
         <Navbar.Link href="/preowned" style={{ color: 'white' }}>
           Preowned
         </Navbar.Link>
-
+        <Navbar.Link href="/explore" style={{ color: 'white' }}>
+          Explore
+        </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );

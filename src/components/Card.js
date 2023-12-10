@@ -13,7 +13,7 @@ const Card = ({ props }) => {
                 </Link>
             </div>
             <div className="px-7 pb-7 align-bottom pt-5">
-                <a href={`/resell/${props._id}`}>
+                <a href={`/resell/${props.id}`}>
                     <h5 className="text-xl font-semibold tracking-tight text-gray-600 dark:text-white">{props._collectionName}</h5>
                 </a>
                 <div className="flex items-center justify-between pb-4">
