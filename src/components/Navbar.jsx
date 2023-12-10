@@ -4,7 +4,20 @@ import Link from "next/link";
 import { MdDashboard } from "react-icons/md";
 import { IoIosNotifications } from "react-icons/io";
 import { FaSignOutAlt } from "react-icons/fa";
+import { useState,useEffect } from "react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 export default function NavbarNow() {
+  const [h,setH] = useState(true)
+
+  useEffect(() => {
+    const page = document.URL
+    if(page=='/'){
+      setH(true)
+    }
+    else{
+      setH(false)
+    }
+  },[])
   return (
     <Navbar fluid rounded style={{ backgroundColor: 'transparent' }}>
       <Navbar.Brand href="/">
@@ -27,7 +40,7 @@ export default function NavbarNow() {
               <p className="text-md">Dashboard</p>
             </div>
           </Dropdown.Item></Link>
-          <Link href="#"><Dropdown.Item>
+          <Link href="/notification"><Dropdown.Item>
             <div className="flex items-center gap-x-3">
               <IoIosNotifications className="text-xl" />
               <p className="text-md">Notifications</p>
@@ -41,15 +54,20 @@ export default function NavbarNow() {
             </div>
           </Dropdown.Item>
         </Dropdown>
+        <ConnectButton />
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse style={{ color: 'white' }}>
-        <Navbar.Link href="#" active style={{ color: 'white' }}>
+        <Navbar.Link href="/" active style={{ color: 'white' }}>
           Home
         </Navbar.Link>
-        <Navbar.Link href="#" style={{ color: 'white' }}>
+        {h?<Navbar.Link href="#about" style={{ color: 'white' }}>
           About
         </Navbar.Link>
+        :<Navbar.Link href="/#about" style={{ color: 'white' }}>
+        About
+      </Navbar.Link>}
+        
         <Navbar.Link href="/brands" style={{ color: 'white' }}>
           Brands
         </Navbar.Link>

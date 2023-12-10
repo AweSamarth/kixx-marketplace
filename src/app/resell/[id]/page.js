@@ -29,13 +29,15 @@ const kickId = () => {
     };
 
     return (
-      <div className="bg-gradient-to-br from-gray-800 to-black dark:bg-gray-800">
+      <div className="bg-gradient-to-br from-gray-800 to-black dark:bg-gray-800 ">
         <NavbarNow/>
+
       <div className="py-8 h-full lg:h-screen flex-none mt-16">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex flex-col md:flex-row -mx-4 justify-center it">
               <div class="md:flex-1 px-4">
                   <div class="h-[460px] max-w-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
+=======
                   <div className=" relative object-cover  h-[460px] ">
                   <Image
                   className="rounded-lg left-4"
@@ -47,27 +49,27 @@ const kickId = () => {
                   />
         </div>
                 </div>
-                  <div class="flex -mx-2 mb-4 items-center justify-center">
+                  <div className="flex -mx-2 mb-4 items-center justify-center">
                   </div>
               </div>
-              <div class="md:flex-1 px-4">
-                  <h2 class="text-2xl font-bold text-gray-300 dark:text-white mb-2">Product Name</h2>
-                  <p class="text-gray-400 dark:text-gray-300 text-sm mb-4">
+              <div className="md:flex-1 px-4">
+                  <h2 className="text-2xl font-bold text-gray-300 dark:text-white mb-2">Product Name</h2>
+                  <p className="text-gray-400 dark:text-gray-300 text-sm mb-4">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
                       ante justo. Integer euismod libero id mauris malesuada tincidunt.
                   </p>
-                  <div class="flex mb-4">
-                      <div class="mr-4">
-                          <span class="font-bold text-gray-300 dark:text-gray-300">Price:</span>
-                          <span class="text-gray-400 dark:text-gray-300 ml-1">$29.99</span>
+                  <div className="flex mb-4">
+                      <div className="mr-4">
+                          <span className="font-bold text-gray-300 dark:text-gray-300">Price:</span>
+                          <span className="text-gray-400 dark:text-gray-300 ml-1">$29.99</span>
                       </div>
                       <div>
-                          <span class="font-bold text-gray-300 dark:text-gray-300">Availability:</span>
-                          <span class="text-gray-400 dark:text-gray-300 ml-1">In Stock</span>
+                          <span className="font-bold text-gray-300 dark:text-gray-300">Availability:</span>
+                          <span className="text-gray-400 dark:text-gray-300 ml-1">In Stock</span>
                       </div>
                   </div>
-                  <div class="mb-4">
-                      <span class="font-bold text-gray-300 dark:text-gray-400 mr-2">Select Size:</span>
+                  <div className="mb-4">
+                      <span className="font-bold text-gray-300 dark:text-gray-400 mr-2">Select Size:</span>
                       <select className=" h-9 p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onChange={onOptionChangeHandler}>
                   <option>--size--</option>
                   {options.map((option, index) => {
@@ -80,8 +82,8 @@ const kickId = () => {
               </select>
                   </div>
                   <div>
-                      <span class="font-bold text-gray-300 dark:text-gray-300">Product Description:</span>
-                      <p class="text-gray-400 dark:text-gray-300 text-sm mt-2">
+                      <span className="font-bold text-gray-300 dark:text-gray-300">Product Description:</span>
+                      <p className="text-gray-400 dark:text-gray-300 text-sm mt-2">
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                           sed ante justo. Integer euismod libero id mauris malesuada tincidunt. Vivamus commodo nulla ut
                           lorem rhoncus aliquet. Duis dapibus augue vel ipsum pretium, et venenatis sem blandit. Quisque
@@ -89,9 +91,9 @@ const kickId = () => {
                           sagittis mauris blandit. Morbi fermentum libero vel nisl suscipit, nec tincidunt mi consectetur.
                       </p>
                   </div>
-                  <div class="flex -mx-2 mb-4 items-center justify-center">
-                      <div class="w-1/2 px-2">
-                          <button class="w-full bg-slate-200 mt-6 dark:bg-gray-600 text-tertiary py-2 px-4 rounded-full font-bold hover:bg-gray-400 dark:hover:bg-gray-700">Checkout</button>
+                  <div className="flex -mx-2 mb-4 items-center justify-center">
+                      <div className="w-1/2 px-2">
+                          <button className="w-full bg-slate-200 mt-6 dark:bg-gray-600 text-tertiary py-2 px-4 rounded-full font-bold hover:bg-gray-400 dark:hover:bg-gray-700">Checkout</button>
                       </div>
                   </div>
               </div>
