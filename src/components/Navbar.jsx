@@ -42,7 +42,7 @@ export default function NavbarNow() {
         <Navbar.Link href="/brands" style={{ color: 'white' }}>
           Brands
         </Navbar.Link>
-        <Navbar.Link href="/resell" style={{ color: 'white' }}>
+        <Navbar.Link href="/preowned" style={{ color: 'white' }}>
           Preowned
         </Navbar.Link>
 
