@@ -1,11 +1,11 @@
-export const ADDRESS = "0xa84641aced4c404c58E8350AfD3F75bb183Bf77d"
+export const ADDRESS = "0x1Eef1882Cc704801D400e2CA3a1047e554f4272f"
 
 export const ABI =[
 	{
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "string",
 				"name": "_brandName",
 				"type": "string"
@@ -30,7 +30,7 @@ export const ABI =[
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "string",
 				"name": "_collectionName",
 				"type": "string"
@@ -154,7 +154,7 @@ export const ABI =[
 				"type": "address"
 			},
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "string",
 				"name": "_theId",
 				"type": "string"
@@ -167,7 +167,7 @@ export const ABI =[
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "string",
 				"name": "_theId",
 				"type": "string"
@@ -224,7 +224,7 @@ export const ABI =[
 				"type": "address"
 			},
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "string",
 				"name": "_theId",
 				"type": "string"

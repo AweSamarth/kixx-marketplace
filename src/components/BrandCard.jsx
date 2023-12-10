@@ -1,10 +1,10 @@
+"use client";
 
-'use client';
-
-import { Card } from 'flowbite-react';
+import { Card } from "flowbite-react";
 
 export default function BrandCard({ props }) {
   return (
+<<<<<<< HEAD
 
 
 
@@ -21,16 +21,47 @@ export default function BrandCard({ props }) {
         <a href="#">
             <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{props.name}</h5>
 
+=======
+    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="h-[300px]">
+        <a href={`/brands/${props.brandId}`}>
+          <img
+            className="p-8 rounded-t-lg"
+            src={props.image}
+            alt="product image"
+          />
+>>>>>>> cc438a10a708c0d87ca65c3f09ab74bd34c61d43
         </a>
       </div>
-      <div class="px-5 pb-5">
-        <a href="#">
-          <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{props.name}</h5>
+
+      <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <a href={`/brands/${props.brandId}`}>
+          <img
+            className="p-8 rounded-t-lg"
+            src={props.image}
+            alt="product image"
+          />
         </a>
+        <div className="px-5 pb-5">
+          <a href="#">
+            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              {props.name}
+            </h5>
+          </a>
+        </div>
+        <div class="px-5 pb-5">
+          <a href="#">
+            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              {props.name}
+            </h5>
+          </a>
+        </div>
       </div>
     </div>
+<<<<<<< HEAD
     </div>
     </div>
+=======
+>>>>>>> cc438a10a708c0d87ca65c3f09ab74bd34c61d43
   );
 }
-

@@ -4,6 +4,7 @@ import NavbarNow from '@/components/Navbar';
 import FooterNow from '@/components/Footer';
 import { useState } from 'react';
 import { StoreNewBrand } from '@/components/StoreNewBrand';
+import { readContract, writeContract } from "@wagmi/core";
 
 import {
     LogInWithAnonAadhaar,
@@ -27,16 +28,7 @@ export default function Launch() {
 
     const [name, setName] = useState();
     const [image, setImage] = useState();
-    const [imageUrl, setImageUrl] = useState()
 
- 
-    const { data, isLoading, isSuccess, write } = useContractWrite({
-        address: ADDRESS,
-        abi: ABI,
-        functionName: 'newBrand',
-        args:[name, imageUrl]
-
-      })
 
 
     const uploadAndWrite = async () => {
@@ -47,9 +39,15 @@ export default function Launch() {
 
             const url = `https://ipfs.io/ipfs/${uri}`;
             console.log(url)
-            console.log(typeof(url))
-            setImageUrl(url.toString())        
-            write()
+            const { hash } = await writeContract({
+                address: ADDRESS,
+                abi: ABI,
+                functionName: "newBrand",
+                args: [name, url],
+              });
+
+              console.log(hash)
+            
             console.log("NFT metadata uploaded to IPFS");
 
         } 

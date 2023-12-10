@@ -3,7 +3,7 @@
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "string",
 				"name": "_brandName",
 				"type": "string"
@@ -28,7 +28,7 @@
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "string",
 				"name": "_collectionName",
 				"type": "string"
@@ -152,7 +152,7 @@
 				"type": "address"
 			},
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "string",
 				"name": "_theId",
 				"type": "string"
@@ -165,7 +165,7 @@
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "string",
 				"name": "_theId",
 				"type": "string"
@@ -222,7 +222,7 @@
 				"type": "address"
 			},
 			{
-				"indexed": true,
+				"indexed": false,
 				"internalType": "string",
 				"name": "_theId",
 				"type": "string"
