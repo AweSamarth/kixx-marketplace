@@ -1,10 +1,23 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import NavbarNow from '@/components/Navbar';
 import FooterNow from '@/components/Footer';
-import { useState } from 'react';
 import { StoreMetadata } from '@/components/StoreMetadata';
+import { readContract, writeContract } from "@wagmi/core";
+
+
+import { useContractWrite } from 'wagmi';
+
+import { ABI, ADDRESS } from '@/constants/both';
+
+/// used NFT.storage to prepare the metadata for the NFT
+
 export default function Launch() {
+
+ 
+
+
+    
     // Launch collection
     // Replace these values with actual data
     const [name, setName] = useState();
@@ -12,20 +25,42 @@ export default function Launch() {
     const [price, setPrice] = useState();
     const [image, setImage] = useState();
 
+    const [imageUrl, setImageUrl] = useState("")
+
+
+    const { data, isLoading, isSuccess, write } = useContractWrite({
+        address: ADDRESS,
+        abi: ABI,
+        functionName: 'newCollection',
+        args:[name, maxsupply, imageUrl, parseInt(price)]
+
+      })
+
+
     console.log(name, "name");
     console.log(maxsupply, "supply");
     console.log(price, "price");
     console.log(image, "image");
 
+    useEffect(()=>{
+        console.log(imageUrl)
+    }, [imageUrl])
 
-    const upload = async () => {
+    const uploadAndWrite = async () => {
         try {
             const metadata = await StoreMetadata(name, maxsupply, image, price);
-            const uri = metadata.data.image.href;
-            console.log(metadata);
-            const url = `https://ipfs.io/ipfs/${metadata.ipnft}`;
-            console.log(url);
-            console.log('NFT metadata uploaded to IPFS');
+            const uri= metadata.data.image.pathname.substring(2)
+
+            const url = `https://ipfs.io/ipfs/${uri}`;
+            const { hash } = await writeContract({
+                address: ADDRESS,
+                abi: ABI,
+                functionName: "newCollection",
+                args: [name, maxsupply, url, parseInt(price) ],
+              });
+
+              console.log(hash)
+            console.log("NFT metadata uploaded to IPFS");
         } catch (err) {
             console.log(err);
         }
@@ -44,7 +79,7 @@ export default function Launch() {
                         className="py-6 px-9"
                         onSubmit={(e) => {
                             e.preventDefault(); // Prevents the default form submission behavior
-                            upload(); // Call your upload function here
+                            uploadAndWrite(); // Call your upload function here
                         }}
                     >
                         <div className="mb-5">
@@ -116,7 +151,6 @@ export default function Launch() {
                                 Price (In ETH):
                             </label>
                             <input
-                                type="number"
                                 name="price"
                                 id="price"
                                 onChange={(e) => setPrice(e.target.value)}
@@ -140,3 +174,6 @@ export default function Launch() {
         </div>
     );
 }
+import { NFTStorage } from "nft.storage";
+
+

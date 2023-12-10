@@ -6,13 +6,13 @@ import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-
 
 export default function FooterNow() {
   return (
-    <Footer container>
+    <Footer container style={{ backgroundColor: 'transparent' }}>
       <div className="w-full">
-        <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
+        <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1 text-white">
           <div>
             <Footer.Brand
-              href="https://flowbite.com"
-              src="https://flowbite.com/docs/images/logo.svg"
+              href="/"
+              src="/logo_kixx.png"
               alt="Flowbite Logo"
               name="KIXX"
             />

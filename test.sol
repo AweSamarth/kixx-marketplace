@@ -7,10 +7,10 @@ pragma solidity ^0.8.19 ;
 contract SneakerMarketplace{
 
     event CollectionLaunched(string indexed _collectionName, uint _totalSupplyOfCollection, string _imageUrl, uint _priceInEth);
-    event PurchasedFromCollection(address _buyer, string indexed _id);
-    event ResaleListingCreated(address _reseller, string indexed _id, uint priceInEth );
-    event PurchasedFromReseller (string indexed _id, address _newOwner, address _prevOwner);
-    event BrandCreated (string indexed _brandNAme, address _theAddress, string _logoUrl);
+    event PurchasedFromCollection(address _buyer, string indexed _theId);
+    event ResaleListingCreated(address _reseller, string indexed _theId, uint priceInEth );
+    event PurchasedFromReseller (string indexed _theId, address _newOwner, address _prevOwner);
+    event BrandCreated (string indexed _brandName, address _theAddress, string _logoUrl);
 
 
     struct Brand{
@@ -64,9 +64,12 @@ contract SneakerMarketplace{
     return addressToBrand[msg.sender];
     }  
 
-    function newBrand(string memory _brandName) public {
+    function newBrand(string memory _brandName, string memory _logoUrl) public {
         addressToBrand[msg.sender].brandName = _brandName;
         addressToBrand[msg.sender].theAddress = msg.sender;
+        addressToBrand[msg.sender].logoUrl = _logoUrl;
+
+    emit BrandCreated(_brandName, msg.sender, _logoUrl);
     }
 
     function purchaseFromCollection (string memory _collectionName) payable external {

@@ -18,7 +18,7 @@ export const StoreNewBrand = async (Name, image) => {
   const metadata = await client.store(nft);
   console.log(metadata);
   console.log("NFT data stored successfully 🚀🚀");
-  console.log("Metadata URI: ", metadata.url);
-
+  console.log("Metadata URI: ", metadata.data.image.href);
+  
   return metadata;
 };

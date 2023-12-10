@@ -5,10 +5,10 @@ const Card = ({ props }) => {
     return (
 
         <div className="w-full max-w-sm bg-transparent rounded-lg dark:bg-gray-800 dark:border-gray-500 p-8 align-text-bottom flex flex-col justify-between">
-            <div className='px-8 h-12'>
-                <Link href={`/resell/${props._id}`}>
+            <div className='px-8'>
+                <Link href={`/preowned/${props._id}`}>
 
-                    <img className="rounded-t-lg bg-transparent transitions-theme rotate-0 hover:rotate-[25deg] max-h-12" src={props.image} alt="product image" />
+                    <img className="rounded-t-lg bg-transparent transitions-theme rotate-0 hover:rotate-[25deg]" src={props.image} alt="product image" />
 
                 </Link>
             </div>

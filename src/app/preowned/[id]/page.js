@@ -21,7 +21,7 @@ const kickId = () => {
         '11',
     ];
     const onOptionChangeHandler = (event) => {
-        setData(event.target.value);
+        setSize(event.target.value);
         console.log(
             "User Selected Value - ",
             event.target.value
@@ -37,7 +37,7 @@ const kickId = () => {
           <div class="flex flex-col md:flex-row -mx-4 justify-center it">
               <div class="md:flex-1 px-4">
                   <div class="h-[460px] max-w-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
-=======
+
                   <div className=" relative object-cover  h-[460px] ">
                   <Image
                   className="rounded-lg left-4"

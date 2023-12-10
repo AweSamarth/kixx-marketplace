@@ -1,21 +1,5 @@
 "use client"
 
-const countries = [
-    "India",
-    "USA",
-    "China",
-    "South Africa",
-    "Brazil",
-    "Russia",
-]
-
-const regions = [
-    "Rajasthan",
-    "Madhya Pradesh",
-    "Himachal Pradesh",
-    "Kerela",
-    "Karnataka",
-]
 export default function Checkout() {
     return (
         <div>
