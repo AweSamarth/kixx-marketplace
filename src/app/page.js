@@ -22,7 +22,7 @@ export default function Home() {
             <div className="lg:w-[400px] space-y-16 w-screen">
               <div className="lg:text-[60px] text-[40px] text-white font-bold tracking-widest lg:flex-none flex flex-col justify-center lg:items-start items-center">
                 <p className="drop-shadow-lg">KIXX</p>
-                <p className="drop-shadow-lg ">Marketplace</p>
+                <p className="drop-shadow-lg text-[#FA662C]">Market<span className="text-white">place</span></p>
               </div>
               <div className="flex flex-row gap-x-16 justify-center lg:justify-start">
                 <Link href={"/launchCollection"}><button className="font-bold border border-white lg:p-4 sm:p-2 p-3 text-white lg:text-base text-md rounded-md">Launch Collection</button></Link>

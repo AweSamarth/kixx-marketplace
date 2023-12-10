@@ -21,15 +21,17 @@ export default function Launch() {
     const upload = async () => {
         try {
             const metadata = await StoreMetadata(name, maxsupply, image, price);
-            const uri = metadata.url;
+            const uri = metadata.data.image.href;
             console.log(metadata);
             const url = `https://ipfs.io/ipfs/${metadata.ipnft}`;
-            console.log(url)
-            console.log("NFT metadata uploaded to IPFS");
+            console.log(url);
+            console.log('NFT metadata uploaded to IPFS');
         } catch (err) {
             console.log(err);
         }
     };
+
+   
 
 
     return (
