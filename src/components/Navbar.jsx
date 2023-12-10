@@ -21,8 +21,8 @@ export default function NavbarNow() {
   return (
     <Navbar fluid rounded style={{ backgroundColor: 'transparent' }}>
       <Navbar.Brand href="/">
-        <img src="/favicon.ico" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">KIXX</span>
+        <img src="/logo_kixx.png" className="mx-3 h-12 sm:h-9" alt="Logo" />
+        <span className="self-center whitespace-nowrap text-xl font-semibold text-white">KIXX</span>
       </Navbar.Brand>
       <div className="flex md:order-2">
         <Dropdown

@@ -8,7 +8,6 @@ import FooterNow from "@/components/Footer";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Slider from "@/components/Slider";
 import { AnonAadhaarProvider } from "anon-aadhaar-react";
-import Link from "next/link";
 
 
 export default function Home() {
@@ -23,10 +22,11 @@ export default function Home() {
               <div className="lg:text-[60px] text-[40px] text-white font-bold tracking-widest lg:flex-none flex flex-col justify-center lg:items-start items-center">
                 <p className="drop-shadow-lg">KIXX</p>
                 <p className="drop-shadow-lg ">Marketplace</p>
+                <p className="drop-shadow-lg text-orange-300 text-[40px] font-semibold">Cop the real</p>
               </div>
               <div className="flex flex-row gap-x-16 justify-center lg:justify-start">
-                <Link href={"/launchCollection"}><button className="font-bold border border-white lg:p-4 sm:p-2 p-3 text-white lg:text-base text-md rounded-md">Launch Collection</button></Link>
-                <Link href={"/launchBrand"}><button className="font-bold lg:p-4 sm:p-2 p-3 text-white bg-[#FA662C] lg:text-base text-md rounded-md ">Launch Brand</button></Link>
+                <button className="border border-white lg:p-4 sm:p-2 p-3 text-white lg:text-base text-md rounded-md">BRANDS</button>
+                <button className="lg:p-4 sm:p-2 p-3 text-white bg-[#FA662C] lg:text-base text-md rounded-md ">RESELLERS</button>
               </div>
             </div>
           </div>
@@ -43,7 +43,9 @@ export default function Home() {
       </div>
       <About id='about'/>
       <Slider />
+      <div className="bg-[#151030]">
       <FooterNow />
+      </div>
     </div>
   );
 }

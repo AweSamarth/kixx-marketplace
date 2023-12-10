@@ -2,25 +2,29 @@ import React from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 
+import { GiWorld } from "react-icons/gi"
+import { PiIdentificationBadgeDuotone } from "react-icons/pi";
+import { BsTransparency } from "react-icons/bs";
+import { HiLockClosed } from "react-icons/hi";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { ServiceCard } from "./ServiceCard";
 const services = [
   {
-    title: "Web Developer",
-    icon: "/backend.png",
+    title: "Safe and Secure",
+    icon: <HiLockClosed />,
   },
   {
-    title: "React Native Developer",
-    icon: "/backend.png",
+    title: "Tranparency",
+    icon: <BsTransparency />,
   },
   {
-    title: "Backend Developer",
-    icon: "/backend.png",
+    title: "Zero Knowledge Proof",
+    icon: <PiIdentificationBadgeDuotone />,
   },
   {
-    title: "Content Creator",
-    icon: "/backend.png",
+    title: "Cross Country Transaction",
+    icon: <GiWorld />,
   },
 ];
 
