@@ -19,41 +19,12 @@ export default function NavbarNow() {
     }
   },[])
   return (
-    <Navbar fluid rounded style={{ backgroundColor: 'transparent' }}>
+    <Navbar fluid rounded style={{ backgroundColor: 'transparent' }} >
       <Navbar.Brand href="/">
         <img src="/logo_kixx.png" className="mx-3 h-12 sm:h-9" alt="Logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold text-white">KIXX</span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Dropdown
-          arrowIcon={false}
-          inline
-          label={
-            <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
-          }
-        >
-          <Dropdown.Header>
-          </Dropdown.Header>
-          <Link href="#"><Dropdown.Item>
-            <div className="flex items-center gap-x-3">
-              <MdDashboard className="text-xl" />
-              <p className="text-md">Dashboard</p>
-            </div>
-          </Dropdown.Item></Link>
-          <Link href="/notification"><Dropdown.Item>
-            <div className="flex items-center gap-x-3">
-              <IoIosNotifications className="text-xl" />
-              <p className="text-md">Notifications</p>
-            </div>
-          </Dropdown.Item></Link>
-          <Dropdown.Divider />
-          <Dropdown.Item>
-            <div className="flex items-center gap-x-3">
-              <FaSignOutAlt className="text-xl" />
-              <p className="text-md">Sign out</p>
-            </div>
-          </Dropdown.Item>
-        </Dropdown>
         <ConnectButton />
         <Navbar.Toggle />
       </div>
@@ -72,7 +43,7 @@ export default function NavbarNow() {
           Brands
         </Navbar.Link>
         <Navbar.Link href="/resell" style={{ color: 'white' }}>
-          Resellers
+          Preowned
         </Navbar.Link>
 
       </Navbar.Collapse>

@@ -60,7 +60,7 @@ export default function Slider() {
             >
                 {dummyData.map((data, index) => (
                     <SwiperSlide key={index} virtualIndex={index}>
-                        <Link href={`/resell/${data.id}`}>
+                        <Link href={`/preowned/${data.id}`}>
                             <div className='lg:pl-16 lg:mt-8 mt-8 max-sm:p-14 p-10'>
                                 <img
                                     src={data.image}
