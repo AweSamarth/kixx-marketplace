@@ -31,11 +31,13 @@ const kickId = () => {
     return (
       <div className="bg-gradient-to-br from-gray-800 to-black dark:bg-gray-800 ">
         <NavbarNow/>
+
       <div className="py-8 h-full lg:h-screen flex-none mt-16">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex flex-col md:flex-row -mx-4 justify-center it">
               <div class="md:flex-1 px-4">
                   <div class="h-[460px] max-w-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
+=======
                   <div className=" relative object-cover  h-[460px] ">
                   <Image
                   className="rounded-lg left-4"

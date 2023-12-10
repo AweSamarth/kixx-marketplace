@@ -1,29 +1,42 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import NavbarNow from '@/components/Navbar';
 import FooterNow from '@/components/Footer';
-import { useState } from 'react';
 import { StoreMetadata } from '@/components/StoreMetadata';
+
+
+/// used NFT.storage to prepare the metadata for the NFT
+
 export default function Launch() {
+
+
+
+    
+    // Launch collection
     // Replace these values with actual data
     const [name, setName] = useState();
     const [maxsupply, setMaxSupply] = useState();
     const [price, setPrice] = useState();
     const [image, setImage] = useState();
 
+    const [imageUrl, setImageUrl] = useState("")
+
     console.log(name, "name");
     console.log(maxsupply, "supply");
     console.log(price, "price");
     console.log(image, "image");
 
+    useEffect(()=>{
+        console.log(imageUrl)
+    }, [imageUrl])
 
     const upload = async () => {
         try {
             const metadata = await StoreMetadata(name, maxsupply, image, price);
-            const uri = metadata.url;
-            console.log(metadata);
-            const url = `https://ipfs.io/ipfs/${metadata.ipnft}`;
-            console.log(url)
+            const uri= metadata.data.image.pathname.substring(2)
+
+            const url = `https://ipfs.io/ipfs/${uri}`;
+            setImageUrl(url)        
             console.log("NFT metadata uploaded to IPFS");
         } catch (err) {
             console.log(err);
@@ -137,3 +150,6 @@ export default function Launch() {
         </div>
     );
 }
+import { NFTStorage } from "nft.storage";
+
+

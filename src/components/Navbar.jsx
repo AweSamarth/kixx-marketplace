@@ -5,6 +5,7 @@ import { MdDashboard } from "react-icons/md";
 import { IoIosNotifications } from "react-icons/io";
 import { FaSignOutAlt } from "react-icons/fa";
 import { useState,useEffect } from "react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 export default function NavbarNow() {
   const [h,setH] = useState(true)
 
@@ -53,6 +54,7 @@ export default function NavbarNow() {
             </div>
           </Dropdown.Item>
         </Dropdown>
+        <ConnectButton />
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse style={{ color: 'white' }}>
